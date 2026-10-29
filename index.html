@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecos del Nuevo Folk | Silvana Estrada & Voces de la Raíz</title>
+
+  <!-- Fuentes Tipográficas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              DEFAULT: '#C45B38',
+              dark: '#984124',
+              light: '#E07A5F'
+            },
+            warmbg: '#FCF9F5',
+            sand: {
+              DEFAULT: '#EDE4D8',
+              light: '#F6F1EA',
+              dark: '#D9CBBA'
+            },
+            olive: {
+              DEFAULT: '#5F634F',
+              light: '#7F846B'
+            },
+            wood: '#2B2523',
+            muted: '#736965'
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Transiciones suave globales */
+    * {
+      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    body {
+      background-color: #FCF9F5;
+      color: #2B2523;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Scrollbar estilizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #EDE4D8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C45B38;
+      border-radius: 4px;
+    }
+
+    /* Animaciones personalizadas */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(196, 91, 56, 0.2); }
+      50% { box-shadow: 0 0 25px rgba(196, 91, 56, 0.45); }
+    }
+    .active-playing-card {
+      animation: pulseGlow 3s infinite ease-in-out;
+      border-color: #C45B38 !important;
+    }
+
+    .glass-nav {
+      background: rgba(252, 249, 245, 0.88);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-terracotta selection:text-white">
+
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-black/5 px-6 lg:px-16 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-full bg-terracotta flex items-center justify-center text-white font-cinzel font-bold text-lg shadow-md">
+        E
+      </div>
+      <span class="font-cinzel font-bold text-lg md:text-xl tracking-widest text-wood">
+        ECOS <span class="text-terracotta">ACÚSTICOS</span>
+      </span>
+    </div>
+
+    <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-wood/80">
+      <a href="#reproductor" class="hover:text-terracotta transition">Reproductor</a>
+      <a href="#quiz" class="hover:text-terracotta transition font-semibold text-terracotta flex items-center gap-1">
+        <span>✨</span> Descubre tu Artista
+      </a>
+      <a href="#instrumentos" class="hover:text-terracotta transition">Instrumentos</a>
+      <a href="#artistas" class="hover:text-terracotta transition">Explorar Género</a>
+      <a href="#comunidad" class="hover:text-terracotta transition">Comunidad</a>
+    </nav>
+
+    <a href="#quiz" class="md:hidden bg-terracotta text-white px-4 py-2 rounded-full text-xs font-semibold shadow-sm">
+      Quiz Musical
+    </a>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-16 pt-10 pb-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <!-- Hero Text -->
+    <div class="lg:col-span-7 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sand text-terracotta-dark text-xs font-bold uppercase tracking-wider border border-sand-dark/30">
+        <span class="w-2 h-2 rounded-full bg-terracotta animate-ping"></span>
+        Nuevo Folk Latinoamericano
+      </div>
+
+      <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-wood">
+        La voz de la raíz, el latido de la <span class="text-terracotta italic font-serif">intimidad.</span>
+      </h1>
+
+      <p class="text-muted text-base sm:text-lg leading-relaxed max-w-2xl">
+        Silvana Estrada transforma el cuatro venezolano, el son jarocho y la poesía sincera en una experiencia catártica. Un viaje musical que enlaza el folclor ancestral con la vulnerabilidad contemporánea.
+      </p>
+
+      <div class="pt-2 flex flex-wrap gap-4 items-center">
+        <a href="#quiz" class="bg-terracotta hover:bg-terracotta-dark text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+          <span>Encontrar mi Artista Ideal</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
+        <a href="#instrumentos" class="bg-sand hover:bg-sand-dark/50 text-wood px-6 py-3.5 rounded-full font-semibold text-sm tracking-wide border border-sand-dark/40 transition">
+          Escuchar Instrumentos
+        </a>
+      </div>
+    </div>
+
+    <!-- Mini-Player Integrado -->
+    <div id="reproductor" class="lg:col-span-5">
+      <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-black/5 relative overflow-hidden">
+        <!-- Decoración estética -->
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-terracotta/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="flex items-center justify-between mb-6">
+          <span class="text-xs font-bold tracking-widest text-terracotta uppercase flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+            En Reproducción
+          </span>
+          <span class="text-xs text-muted font-mono" id="playlist-count">Pista 1 de 5</span>
+        </div>
+
+        <!-- Info Pista Actual -->
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-20 h-20 rounded-xl bg-sand flex-shrink-0 relative overflow-hidden shadow-inner flex items-center justify-center border border-black/5">
+            <svg id="album-art-icon" class="w-10 h-10 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12 0c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+          </div>
+          <div>
+            <h3 id="player-title" class="font-cinzel text-xl font-bold text-wood line-clamp-1">Te Guardo</h3>
+            <p id="player-artist" class="text-sm text-terracotta font-medium">Silvana Estrada</p>
+            <p id="player-album" class="text-xs text-muted mt-0.5">Álbum: Marchita (2022)</p>
+          </div>
+        </div>
+
+        <!-- Barra de Progreso Interactiva -->
+        <div class="space-y-2 mb-6">
+          <div id="progress-container" class="w-full bg-sand h-2.5 rounded-full cursor-pointer relative overflow-hidden group">
+            <div id="progress-bar" class="bg-terracotta h-full rounded-full w-0 transition-all duration-100 relative">
+              <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-terracotta-dark rounded-full shadow opacity-0 group-hover:opacity-100 transition"></div>
+            </div>
+          </div>
+          <div class="flex justify-between text-xs font-mono text-muted">
+            <span id="current-time">00:00</span>
+            <span id="total-duration">03:45</span>
+          </div>
+        </div>
+
+        <!-- Controles de Reproducción -->
+        <div class="flex items-center justify-between">
+          <button id="prev-btn" class="p-2 text-wood/70 hover:text-terracotta transition" title="Anterior">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+          </button>
+
+          <button id="play-btn" class="w-14 h-14 bg-terracotta hover:bg-terracotta-dark text-white rounded-full flex items-center justify-center shadow-lg transform hover:scale-105 transition">
+            <svg id="play-icon" class="w-7 h-7 translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="pause-icon" class="w-7 h-7 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+
+          <button id="next-btn" class="p-2 text-wood/70 hover:text-terracotta transition" title="Siguiente">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+          </button>
+
+          <!-- Control de Volumen Simulado -->
+          <div class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-muted" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+            <input id="volume-slider" type="range" min="0" max="1" step="0.05" value="0.8" class="w-16 accent-terracotta cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Selector Rápido de Canciones -->
+        <div class="mt-6 pt-5 border-t border-black/5">
+          <p class="text-xs font-semibold text-muted uppercase tracking-wider mb-2">Lista de Canciones</p>
+          <div id="playlist-items" class="space-y-1.5 max-h-36 overflow-y-auto pr-1">
+            <!-- Renderizado dinámico -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==================== FEATURE PRINCIPAL: QUIZ INTERACTIVO ==================== -->
+  <section id="quiz" class="py-20 bg-sand/40 border-y border-sand-dark/30 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Banner Encabezado -->
+      <div class="text-center space-y-3 mb-10">
+        <span class="text-xs font-bold text-terracotta uppercase tracking-widest bg-sand px-3 py-1 rounded-full border border-sand-dark/20">
+          Recomendador Inteligente
+        </span>
+        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-wood">
+          ¿Con qué voz del Nuevo Folk conectas hoy?
+        </h2>
+        <p class="text-muted text-sm sm:text-base max-w-xl mx-auto">
+          Responde 4 breves preguntas sobre tus gustos e inclinaciones emocionales. Nuestro algoritmo te guiará al artista que resuena exactamente contigo.
+        </p>
+      </div>
+
+      <!-- Contenedor del Quiz -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-black/5 min-h-[420px] flex flex-col justify-between">
+        
+        <!-- Barra de Progreso del Quiz -->
+        <div class="mb-6">
+          <div class="flex justify-between text-xs font-semibold text-muted mb-2">
+            <span id="quiz-step-title">Paso 1 de 4</span>
+            <span id="quiz-step-percent">25%</span>
+          </div>
+          <div class="w-full bg-sand h-2 rounded-full overflow-hidden">
+            <div id="quiz-progress" class="bg-terracotta h-full w-1/4 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Contenido Dinámico de Preguntas / Resultado -->
+        <div id="quiz-step-container" class="my-auto">
+          <!-- Inyectado mediante JS -->
+        </div>
+
+        <!-- Botones de Navegación del Quiz -->
+        <div id="quiz-actions" class="flex justify-between items-center mt-8 pt-6 border-t border-black/5">
+          <button id="quiz-prev-btn" onclick="prevQuizStep()" class="text-xs font-semibold text-muted hover:text-wood px-4 py-2 rounded-full border border-sand-dark/30 hidden">
+            ← Anterior
+          </button>
+          <div class="ml-auto">
+            <button id="quiz-next-btn" onclick="nextQuizStep()" class="bg-terracotta hover:bg-terracotta-dark text-white px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide transition shadow-md opacity-50 cursor-not-allowed" disabled>
+              Siguiente →
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== EXPLORADOR DE INSTRUMENTOS DE RAÍZ ==================== -->
+  <section id="instrumentos" class="py-20 max-w-7xl mx-auto px-6 lg:px-16">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold text-olive uppercase tracking-widest">Texturas Orgánicas</span>
+      <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-wood mt-2">
+        Instrumentos de Raíz
+      </h2>
+      <p class="text-muted text-sm sm:text-base mt-2">
+        Explora los timbres acústicos que construyen la atmósfera íntima de Silvana Estrada y el folk contemporáneo. Haz clic en cada uno para probar su sonido sintético.
+      </p>
+    </div>
+
+    <!-- Grid de Instrumentos -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Cuatro Venezolano -->
+      <div onclick="playInstrumentSound('cuatro')" class="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-xl cursor-pointer group hover:-translate-y-1 transition relative overflow-hidden">
+        <div class="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-terracotta mb-4 group-hover:bg-terracotta group-hover:text-white transition">
+          🪕
+        </div>
+        <h3 class="font-cinzel text-xl font-bold text-wood mb-1">Cuatro Venezolano</h3>
+        <p class="text-xs text-terracotta font-semibold mb-3">Instrumento insignia de Silvana</p>
+        <p class="text-xs text-muted leading-relaxed">
+          De cuatro cuerdas y sonoridad cálida y rasgada. Aporta la base rítmica y armónica envolvente en temas como "Te Guardo".
+        </p>
+        <div class="mt-4 text-xs font-bold text-terracotta flex items-center gap-1 group-hover:underline">
+          <span>Escuchar acorde</span> 🔊
+        </div>
+      </div>
+
+      <!-- Jarana Jarocha -->
+      <div onclick="playInstrumentSound('jarana')" class="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-xl cursor-pointer group hover:-translate-y-1 transition relative overflow-hidden">
+        <div class="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-terracotta mb-4 group-hover:bg-terracotta group-hover:text-white transition">
+          🎸
+        </div>
+        <h3 class="font-cinzel text-xl font-bold text-wood mb-1">Jarana Jarocha</h3>
+        <p class="text-xs text-terracotta font-semibold mb-3">Tradición de Veracruz, México</p>
+        <p class="text-xs text-muted leading-relaxed">
+          Clave en el son jarocho. Sus rasgueos percusivos transmiten la energía del zapateado y la fiesta popular veracruzana.
+        </p>
+        <div class="mt-4 text-xs font-bold text-terracotta flex items-center gap-1 group-hover:underline">
+          <span>Escuchar acorde</span> 🔊
+        </div>
+      </div>
+
+      <!-- Guitarra de Paracho -->
+      <div onclick="playInstrumentSound('guitarra')" class="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-xl cursor-pointer group hover:-translate-y-1 transition relative overflow-hidden">
+        <div class="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-terracotta mb-4 group-hover:bg-terracotta group-hover:text-white transition">
+          🎶
+        </div>
+        <h3 class="font-cinzel text-xl font-bold text-wood mb-1">Guitarra de Paracho</h3>
+        <p class="text-xs text-terracotta font-semibold mb-3">Artesanía en madera de Michoacán</p>
+        <p class="text-xs text-muted leading-relaxed">
+          Guitarras artesanales con maderas nobles que brindan graves profundos y agudos cristalinos ideados para la canción de autor.
+        </p>
+        <div class="mt-4 text-xs font-bold text-terracotta flex items-center gap-1 group-hover:underline">
+          <span>Escuchar acorde</span> 🔊
+        </div>
+      </div>
+
+      <!-- Charango -->
+      <div onclick="playInstrumentSound('charango')" class="bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-xl cursor-pointer group hover:-translate-y-1 transition relative overflow-hidden">
+        <div class="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-terracotta mb-4 group-hover:bg-terracotta group-hover:text-white transition">
+          🪈
+        </div>
+        <h3 class="font-cinzel text-xl font-bold text-wood mb-1">Charango Andino</h3>
+        <p class="text-xs text-terracotta font-semibold mb-3">Eco de la Cordillera de los Andes</p>
+        <p class="text-xs text-muted leading-relaxed">
+          De diez cuerdas agudas dobles. Brinda destellos de luz y misticismo en arpegios de folclor sudamericano.
+        </p>
+        <div class="mt-4 text-xs font-bold text-terracotta flex items-center gap-1 group-hover:underline">
+          <span>Escuchar acorde</span> 🔊
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ARTISTAS DEL GÉNERO CON FILTROS DINÁMICOS ==================== -->
+  <section id="artistas" class="py-20 bg-sand/20 border-t border-black/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-16">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold text-terracotta uppercase tracking-widest">Sintonía Sonora</span>
+          <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-wood mt-1">
+            Artistas en la misma sintonía
+          </h2>
+          <p class="text-muted text-sm mt-1">Voces contemporáneas que reinterpretan la poesía y la instrumentación acústica.</p>
+        </div>
+
+        <!-- Filtros Combinados -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterArtists('all')" class="filter-btn active-filter border border-terracotta bg-terracotta text-white px-4 py-2 rounded-full text-xs font-semibold transition">
+            Todos
+          </button>
+          <button onclick="filterArtists('mexico')" class="filter-btn border border-sand-dark/40 bg-white text-wood hover:border-terracotta px-4 py-2 rounded-full text-xs font-semibold transition">
+            México
+          </button>
+          <button onclick="filterArtists('suramerica')" class="filter-btn border border-sand-dark/40 bg-white text-wood hover:border-terracotta px-4 py-2 rounded-full text-xs font-semibold transition">
+            Sudamérica
+          </button>
+          <button onclick="filterArtists('espana')" class="filter-btn border border-sand-dark/40 bg-white text-wood hover:border-terracotta px-4 py-2 rounded-full text-xs font-semibold transition">
+            España
+          </button>
+        </div>
+      </div>
+
+      <!-- Grid de Artistas Dinámico -->
+      <div id="artists-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Generado dinámicamente -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== BENEFICIOS COGNITIVOS Y EMOCIONALES ==================== -->
+  <section class="py-20 max-w-7xl mx-auto px-6 lg:px-16">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-bold text-olive uppercase tracking-widest">Música con Propósito</span>
+      <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-wood mt-2">
+        ¿Qué aporta escuchar este género?
+      </h2>
+      <p class="text-muted text-sm sm:text-base mt-2">
+        Beneficios emocionales, neurocognitivos y culturales de la música orgánica y acústica.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-7 rounded-2xl border-t-4 border-terracotta shadow-sm hover:shadow-md transition">
+        <div class="text-2xl mb-3">🌿</div>
+        <h3 class="font-cinzel font-bold text-lg text-wood mb-2">Regulación Emocional</h3>
+        <p class="text-xs text-muted leading-relaxed">
+          Sus armonías orgánicas y letras profundas ayudan a procesar la melancolía y el duelo de forma compasiva y terapéutica.
+        </p>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border-t-4 border-olive shadow-sm hover:shadow-md transition">
+        <div class="text-2xl mb-3">☕</div>
+        <h3 class="font-cinzel font-bold text-lg text-wood mb-2">Reducción de Fatiga</h3>
+        <p class="text-xs text-muted leading-relaxed">
+          Sin sobreproducción ni compresión agresiva. El sonido de maderas y cuerdas relaja la respuesta del sistema nervioso.
+        </p>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border-t-4 border-terracotta-light shadow-sm hover:shadow-md transition">
+        <div class="text-2xl mb-3">🌍</div>
+        <h3 class="font-cinzel font-bold text-lg text-wood mb-2">Reconexión Cultural</h3>
+        <p class="text-xs text-muted leading-relaxed">
+          Introduce formas tradicionales (son jarocho, chacarera, copla) en canciones actuales, revalorizando la identidad.
+        </p>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border-t-4 border-wood shadow-sm hover:shadow-md transition">
+        <div class="text-2xl mb-3">📖</div>
+        <h3 class="font-cinzel font-bold text-lg text-wood mb-2">Atención Plena</h3>
+        <p class="text-xs text-muted leading-relaxed">
+          El tempo pausado e intimista favorece estados de concentración profunda, lectura, escritura o reflexión consciente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COMUNIDAD Y REFLEXIONES ==================== -->
+  <section id="comunidad" class="py-20 bg-sand/30 border-t border-black/5">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold text-terracotta uppercase tracking-widest">Ecos de la Comunidad</span>
+        <h2 class="font-cinzel text-3xl font-bold text-wood mt-2">
+          Muro de Reflexiones
+        </h2>
+        <p class="text-muted text-sm mt-1">
+          Comparte qué emoción o recuerdo despierta en ti la música acústica y el Nuevo Folk.
+        </p>
+      </div>
+
+      <!-- Formulario para agregar nota -->
+      <form id="note-form" onsubmit="addCommunityNote(event)" class="bg-white rounded-2xl p-6 shadow-md border border-black/5 mb-10 max-w-2xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <input id="note-author" type="text" placeholder="Tu Nombre o Apodo" required class="w-full bg-sand-light border border-sand-dark/40 rounded-xl px-4 py-2.5 text-xs text-wood focus:outline-none focus:border-terracotta">
+          <input id="note-song" type="text" placeholder="Canción o Artista favorito" class="w-full bg-sand-light border border-sand-dark/40 rounded-xl px-4 py-2.5 text-xs text-wood focus:outline-none focus:border-terracotta">
+        </div>
+        <textarea id="note-content" rows="3" placeholder="¿Qué sientes al escuchar este género musical?..." required class="w-full bg-sand-light border border-sand-dark/40 rounded-xl px-4 py-2.5 text-xs text-wood focus:outline-none focus:border-terracotta resize-none mb-4"></textarea>
+        
+        <button type="submit" class="w-full bg-terracotta hover:bg-terracotta-dark text-white font-semibold text-xs py-3 rounded-xl shadow transition">
+          Publicar mi Reflexión
+        </button>
+      </form>
+
+      <!-- Muro de Notas -->
+      <div id="notes-wall" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Renderizado dinámico -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-wood text-sand/80 py-12 px-6 lg:px-16 border-t border-white/10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <span class="font-cinzel font-bold text-lg tracking-widest text-white">
+          ECOS <span class="text-terracotta">ACÚSTICOS</span>
+        </span>
+        <p class="text-xs text-sand/60 mt-1">Plataforma dedicada a Silvana Estrada y la preservación del nuevo folclor hispanoamericano.</p>
+      </div>
+
+      <div class="text-xs text-sand/50 text-center md:text-right space-y-1">
+        <p>© 2026 Ecos Acústicos • Un tributo a la canción de autor.</p>
+        <p>Diseño web accesible, responsivo y dinámico.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== LOGICA JAVASCRIPT ==================== -->
+  <script>
+    /* ===================================================
+       1. BASE DE DATOS Y ESTADO DEL REPRODUCTOR
+    =================================================== */
+    const playlist = [
+      {
+        id: 0,
+        title: "Te Guardo",
+        artist: "Silvana Estrada",
+        album: "Marchita (2022)",
+        duration: 225, // 03:45 en segundos
+        lyrics: "Te guardo la luz de la mañana, te guardo el amor en la ventana...",
+        note: "Iconico rasgueo de cuatro venezolano con voz conmovedora."
+      },
+      {
+        id: 1,
+        title: "Marchita",
+        artist: "Silvana Estrada",
+        album: "Marchita (2022)",
+        duration: 200, // 03:20
+        lyrics: "Me quedé marchita de tanto esperar tu amor...",
+        note: "Una desgarradora poesía sobre el desamor y la reconstrucción personal."
+      },
+      {
+        id: 2,
+        title: "Sabré Olvidar",
+        artist: "Silvana Estrada",
+        album: "Marchita (2022)",
+        duration: 210, // 03:30
+        lyrics: "Sabré olvidar el fuego en el que me quemé...",
+        note: "Versión acústica catártica cargada de dramatismo lírico."
+      },
+      {
+        id: 3,
+        title: "Carta",
+        artist: "Silvana Estrada",
+        album: "Single (2021)",
+        duration: 195, // 03:15
+        lyrics: "Te escribo esta carta sin saber si vas a leer...",
+        note: "Intimidad desnuda en voz y cuerdas de guitarra."
+      },
+      {
+        id: 4,
+        title: "Tristeza",
+        artist: "Silvana Estrada",
+        album: "Lo Sagrado (2017)",
+        duration: 240, // 04:00
+        lyrics: "Tristeza vete de aquí, déjame cantar...",
+        note: "Fusión de son jarocho tradicional y sutileza moderna."
+      }
+    ];
+
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let playTimer = null;
+    let currentTime = 0;
+
+    // Elementos DOM Reproductor
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressContainer = document.getElementById('progress-container');
+    const currentTimeEl = document.getElementById('current-time');
+    const totalDurationEl = document.getElementById('total-duration');
+    const playerTitle = document.getElementById('player-title');
+    const playerArtist = document.getElementById('player-artist');
+    const playerAlbum = document.getElementById('player-album');
+    const playlistItemsContainer = document.getElementById('playlist-items');
+    const playlistCount = document.getElementById('playlist-count');
+
+    function formatTime(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    }
+
+    function renderPlaylist() {
+      playlistItemsContainer.innerHTML = '';
+      playlist.forEach((track, index) => {
+        const isActive = index === currentTrackIndex;
+        const item = document.createElement('div');
+        item.className = `flex justify-between items-center p-2 rounded-lg text-xs cursor-pointer transition ${
+          isActive ? 'bg-terracotta/10 text-terracotta font-bold border-l-2 border-terracotta' : 'hover:bg-sand text-wood'
+        }`;
+        item.onclick = () => loadAndPlayTrack(index);
+        item.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <span>${isActive ? '▶' : (index + 1) + '.'}</span>
+            <span class="line-clamp-1">${track.title}</span>
+          </div>
+          <span class="text-muted text-[10px] font-mono">${formatTime(track.duration)}</span>
+        `;
+        playlistItemsContainer.appendChild(item);
+      });
+      playlistCount.textContent = `Pista ${currentTrackIndex + 1} de ${playlist.length}`;
+    }
+
+    function loadTrack(index) {
+      currentTrackIndex = index;
+      const track = playlist[currentTrackIndex];
+      playerTitle.textContent = track.title;
+      playerArtist.textContent = track.artist;
+      playerAlbum.textContent = `Álbum: ${track.album}`;
+      totalDurationEl.textContent = formatTime(track.duration);
+      currentTime = 0;
+      updateProgressUI();
+      renderPlaylist();
+    }
+
+    function updateProgressUI() {
+      const track = playlist[currentTrackIndex];
+      const pct = (currentTime / track.duration) * 100;
+      progressBar.style.width = `${pct}%`;
+      currentTimeEl.textContent = formatTime(currentTime);
+    }
+
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        playTimer = setInterval(() => {
+          const track = playlist[currentTrackIndex];
+          if (currentTime < track.duration) {
+            currentTime++;
+            updateProgressUI();
+          } else {
+            nextTrack();
+          }
+        }, 1000);
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        clearInterval(playTimer);
+      }
+    }
+
+    function loadAndPlayTrack(index) {
+      if (isPlaying) togglePlay();
+      loadTrack(index);
+      togglePlay();
+    }
+
+    function nextTrack() {
+      const newIndex = (currentTrackIndex + 1) % playlist.length;
+      loadAndPlayTrack(newIndex);
+    }
+
+    function prevTrack() {
+      const newIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      loadAndPlayTrack(newIndex);
+    }
+
+    // Saltar en la barra de progreso
+    progressContainer.addEventListener('click', (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = clickX / rect.width;
+      const track = playlist[currentTrackIndex];
+      currentTime = Math.floor(track.duration * pct);
+      updateProgressUI();
+    });
+
+    playBtn.addEventListener('click', togglePlay);
+    nextBtn.addEventListener('click', nextTrack);
+    prevBtn.addEventListener('click', prevTrack);
+
+
+    /* ===================================================
+       2. RECOMENDADOR / QUIZ INTERACTIVO
+    =================================================== */
+    const quizSteps = [
+      {
+        id: 1,
+        title: "¿Cuál es tu estado de ánimo o energía deseada?",
+        subtitle: "Selecciona la atmósfera emocional con la que quieres conectar.",
+        options: [
+          { label: "Introspección y Melancolía Sanadora", mood: "melancholy", icon: "🌙" },
+          { label: "Cálida Nostalgia y Poesía", mood: "nostalgia", icon: "🍂" },
+          { label: "Pasión, Garra y Fuerza Vocal", mood: "passion", icon: "🔥" },
+          { label: "Paz, Naturaleza y Calma", mood: "peace", icon: "🍃" }
+        ]
+      },
+      {
+        id: 2,
+        title: "¿Qué sonido o instrumento te eriza la piel?",
+        subtitle: "El timbre instrumental define el corazón de la pieza.",
+        options: [
+          { label: "Cuatro venezolano o Jarana percusiva", inst: "cuatro", icon: "🪕" },
+          { label: "Guitarra española o acústica minimalista", inst: "guitar", icon: "🎸" },
+          { label: "Cuerdas, chelos y vientos dramáticos", inst: "strings", icon: "🎻" },
+          { label: "Ritmos folclóricos y percusiones suaves", inst: "percussion", icon: "🪘" }
+        ]
+      },
+      {
+        id: 3,
+        title: "¿Qué temática lírica buscas en una canción?",
+        subtitle: "Las palabras son el puente directo con el alma.",
+        options: [
+          { label: "El desamor, la memoria y sanar heridas", theme: "heartbreak", icon: "💔" },
+          { label: "Reflexiones filosóficas e historias cotidianas", theme: "life", icon: "📜" },
+          { label: "Raíces culturales, folclor y la tierra", theme: "roots", icon: "🌱" },
+          { label: "Amor poético, metáforas y naturaleza", theme: "love", icon: "🌸" }
+        ]
+      },
+      {
+        id: 4,
+        title: "¿Qué textura de producción prefieres?",
+        subtitle: "Desde la desnudez absoluta hasta arreglos orgánicos.",
+        options: [
+          { label: "Voz desnuda y un solo instrumento (Formato Íntimo)", density: "raw", icon: "🎙️" },
+          { label: "Arreglos ricos de ensambles acústicos", density: "rich", icon: "🎼" }
+        ]
+      }
+    ];
+
+    // Matriz de Artistas Recomendados
+    const artistProfiles = [
+      {
+        id: "silvana",
+        name: "Silvana Estrada",
+        country: "México 🇲🇽",
+        matchMoods: ["melancholy", "nostalgia"],
+        song: "Te Guardo / Marchita",
+        lyrics: "«Te guardo la luz de la mañana... me quedé marchita de tanto esperar.»",
+        desc: "Tu perfil resuena directamente con Silvana Estrada. Tu búsqueda de vulnerabilidad, letras poéticas y el cálido tañer del cuatro venezolano hacen de su música tu refugio perfecto.",
+        trackIndex: 0
+      },
+      {
+        id: "lafourcade",
+        name: "Natalia Lafourcade",
+        country: "México 🇲🇽",
+        matchMoods: ["peace", "roots"],
+        song: "Hasta la Raíz",
+        lyrics: "«Yo te llevo dentro, hasta la raíz, y por más que crezca, vas a estar aquí...»",
+        desc: "Conectas con la elegancia de rescatar la tradición y el folclor latinoamericano enriquecido con delicadas orquestaciones.",
+        trackIndex: 1
+      },
+      {
+        id: "mon",
+        name: "Mon Laferte",
+        country: "Chile 🇨🇱",
+        matchMoods: ["passion", "heartbreak"],
+        song: "Se Me Va A Quemar El Corazón",
+        lyrics: "«Se me va a quemar el corazón de tanto amarte y no poder tenerte...»",
+        desc: "Tu energía requiere potencia vocal, dramatismo visceral y una mezcla intrépida entre bolero, ranchera y folk apasionado.",
+        trackIndex: 2
+      },
+      {
+        id: "perezcruz",
+        name: "Sílvia Pérez Cruz",
+        country: "España 🇪🇸",
+        matchMoods: ["melancholy", "raw"],
+        song: "Ai, Ai, Ai / Tonada de Luna Llena",
+        lyrics: "«Mi voz es un árbol con raíces profundas en la noche...»",
+        desc: "Buscas virtuosismo técnico puesto al servicio de la pura emoción desnuda, transitando entre el fado, flamenco y jazz acústico.",
+        trackIndex: 3
+      },
+      {
+        id: "drexler",
+        name: "Jorge Drexler",
+        country: "Uruguay 🇺🇾",
+        matchMoods: ["life", "peace"],
+        song: "La Guerrilla de la Concordia",
+        lyrics: "«Amar es un acto de valentía, una forma de luz...»",
+        desc: "Te mueves por la milonga, la décima y letras con precisión poética y científica que invitan a la calma y la reflexión.",
+        trackIndex: 4
+      }
+    ];
+
+    let currentQuizStep = 0;
+    let quizAnswers = {};
+
+    function renderQuizStep() {
+      const container = document.getElementById('quiz-step-container');
+      const stepTitle = document.getElementById('quiz-step-title');
+      const stepPercent = document.getElementById('quiz-step-percent');
+      const progressBar = document.getElementById('quiz-progress');
+      const nextBtn = document.getElementById('quiz-next-btn');
+      const prevBtn = document.getElementById('quiz-prev-btn');
+
+      if (currentQuizStep < quizSteps.length) {
+        const step = quizSteps[currentQuizStep];
+        
+        stepTitle.textContent = `Paso ${step.id} de 4`;
+        stepPercent.textContent = `${(step.id / 4) * 100}%`;
+        progressBar.style.width = `${(step.id / 4) * 100}%`;
+
+        if (currentQuizStep > 0) {
+          prevBtn.classList.remove('hidden');
+        } else {
+          prevBtn.classList.add('hidden');
+        }
+
+        // Habilitar siguiente solo si hay respuesta
+        const hasSelection = quizAnswers[step.id] !== undefined;
+        nextBtn.disabled = !hasSelection;
+        nextBtn.className = `px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide transition shadow-md ${
+          hasSelection ? 'bg-terracotta hover:bg-terracotta-dark text-white cursor-pointer' : 'bg-sand text-muted opacity-50 cursor-not-allowed'
+        }`;
+
+        let html = `
+          <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-wood mb-1">${step.title}</h3>
+          <p class="text-xs sm:text-sm text-muted mb-6">${step.subtitle}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        `;
+
+        step.options.forEach((opt, idx) => {
+          const isSelected = quizAnswers[step.id] === idx;
+          html += `
+            <button onclick="selectQuizOption(${idx})" class="text-left p-4 rounded-xl border transition flex items-center space-x-3 ${
+              isSelected 
+                ? 'border-terracotta bg-terracotta/10 shadow-sm' 
+                : 'border-sand-dark/30 hover:border-terracotta/50 bg-sand-light/50'
+            }">
+              <span class="text-2xl">${opt.icon}</span>
+              <span class="text-xs font-semibold text-wood leading-snug">${opt.label}</span>
+            </button>
+          `;
+        });
+
+        html += `</div>`;
+        container.innerHTML = html;
+      } else {
+        // RENDERIZAR RESULTADO FINAL
+        showQuizResult();
+      }
+    }
+
+    function selectQuizOption(index) {
+      quizAnswers[quizSteps[currentQuizStep].id] = index;
+      renderQuizStep();
+    }
+
+    function nextQuizStep() {
+      if (quizAnswers[quizSteps[currentQuizStep].id] !== undefined) {
+        currentQuizStep++;
+        renderQuizStep();
+      }
+    }
+
+    function prevQuizStep() {
+      if (currentQuizStep > 0) {
+        currentQuizStep--;
+        renderQuizStep();
+      }
+    }
+
+    function showQuizResult() {
+      const container = document.getElementById('quiz-step-container');
+      const actions = document.getElementById('quiz-actions');
+      actions.classList.add('hidden');
+
+      // Seleccionar artista basado en respuestas (Lógica de coincidencia simple)
+      const selectedMoodIndex = quizAnswers[1] || 0;
+      let matchedArtist;
+
+      if (selectedMoodIndex === 0) matchedArtist = artistProfiles[0]; // Silvana
+      else if (selectedMoodIndex === 1) matchedArtist = artistProfiles[1]; // Natalia
+      else if (selectedMoodIndex === 2) matchedArtist = artistProfiles[2]; // Mon
+      else if (selectedMoodIndex === 3) matchedArtist = artistProfiles[4]; // Drexler
+      else matchedArtist = artistProfiles[3]; // Sílvia
+
+      container.innerHTML = `
+        <div class="text-center space-y-4">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-terracotta/10 text-terracotta text-xs font-bold uppercase tracking-wider">
+            ✨ Tu Artista Ideal Es
+          </div>
+
+          <h3 class="font-cinzel text-3xl font-bold text-wood">${matchedArtist.name} <span class="text-sm font-sans font-normal text-muted">${matchedArtist.country}</span></h3>
+
+          <p class="text-xs sm:text-sm text-wood/80 max-w-xl mx-auto leading-relaxed bg-sand/30 p-4 rounded-xl border border-sand-dark/20">
+            ${matchedArtist.desc}
+          </p>
+
+          <div class="p-4 bg-terracotta/5 rounded-2xl border border-terracotta/20 text-left max-w-md mx-auto">
+            <p class="text-[10px] font-bold text-terracotta uppercase tracking-wider mb-1">Canción y Letra Destacada</p>
+            <p class="font-cinzel font-bold text-sm text-wood">${matchedArtist.song}</p>
+            <p class="text-xs italic text-muted mt-1">${matchedArtist.lyrics}</p>
+          </div>
+
+          <div class="pt-4 flex flex-wrap justify-center gap-3">
+            <button onclick="loadAndPlayTrack(${matchedArtist.trackIndex}); scrollToPlayer();" class="bg-terracotta hover:bg-terracotta-dark text-white px-6 py-2.5 rounded-full text-xs font-semibold transition shadow-md flex items-center gap-2">
+              <span>▶ Cargar en Reproductor</span>
+            </button>
+            <button onclick="resetQuiz()" class="bg-sand hover:bg-sand-dark/50 text-wood px-5 py-2.5 rounded-full text-xs font-semibold border border-sand-dark/30 transition">
+              Repetir Quiz
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function resetQuiz() {
+      currentQuizStep = 0;
+      quizAnswers = {};
+      document.getElementById('quiz-actions').classList.remove('hidden');
+      renderQuizStep();
+    }
+
+    function scrollToPlayer() {
+      document.getElementById('reproductor').scrollIntoView({ behavior: 'smooth' });
+    }
+
+
+    /* ===================================================
+       3. SINTETIZADOR DE SONIDO DE INSTRUMENTOS (WEB AUDIO API)
+    =================================================== */
+    function playInstrumentSound(type) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+
+        // Notas simuladas para cada instrumento
+        let freqs = [261.63, 329.63, 392.00, 523.25]; // Do Mayor por defecto
+
+        if (type === 'cuatro') freqs = [293.66, 369.99, 440.00, 587.33]; // Re Mayor rasgado
+        if (type === 'jarana') freqs = [196.00, 246.94, 293.66, 392.00]; // Sol Mayor brillante
+        if (type === 'guitarra') freqs = [164.81, 220.00, 293.66, 329.63]; // Mi menor profundo
+        if (type === 'charango') freqs = [523.25, 659.25, 783.99, 1046.50]; // Agudo cristalino
+
+        freqs.forEach((freq, idx) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+
+          osc.type = type === 'charango' ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(freq, ctx.currentTime);
+
+          // Arpegio levemente desfasado para simular rasgueo humano
+          const startTime = ctx.currentTime + (idx * 0.04);
+          
+          gain.gain.setValueAtTime(0.01, startTime);
+          gain.gain.exponentialRampToValueAtTime(0.2, startTime + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001, startTime + 1.2);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(startTime);
+          osc.stop(startTime + 1.3);
+        });
+
+      } catch (e) {
+        console.log("AudioContext no iniciado por interacción de usuario.");
+      }
+    }
+
+
+    /* ===================================================
+       4. GALERÍA DE ARTISTAS Y FILTROS
+    =================================================== */
+    const allArtists = [
+      {
+        name: "Natalia Lafourcade",
+        country: "México",
+        region: "mexico",
+        quote: "«Hasta la raíz y por más que crezca vas a estar aquí.»",
+        desc: "Pionera en traer la raíz y los sones tradicionales al circuito alternativo con una sensibilidad lírica profunda."
+      },
+      {
+        name: "Jorge Drexler",
+        country: "Uruguay",
+        region: "suramerica",
+        quote: "«Amar es un acto de valentía.»",
+        desc: "Maestro de la milonga y la décima; poesía minimalista guiada por la guitarra acústica y la reflexión humana."
+      },
+      {
+        name: "Sílvia Pérez Cruz",
+        country: "España",
+        region: "espana",
+        quote: "«Mi voz es la memoria de mi tierra.»",
+        desc: "Voz visceral que transita entre el fado, flamenco, jazz y folclor ibérico con pura emoción acústica."
+      },
+      {
+        name: "Guitarricadelafuente",
+        country: "España",
+        region: "espana",
+        quote: "«Agua y mezquita en el alma de la rumba.»",
+        desc: "Fusión de rumba, folclor aragonés y acústica cruda cargada de nostalgia juvenil y textura terrenal."
+      },
+      {
+        name: "Marta Gómez",
+        country: "Colombia",
+        region: "suramerica",
+        quote: "«Para la guerra nada, para la vida todo.»",
+        desc: "Canción de cuna andina, ritmos caribeños y un compromiso ético centrado en la calidez de la palabra cantada."
+      },
+      {
+        name: "Daniel, Me Estás Matando",
+        country: "México",
+        region: "mexico",
+        quote: "«Boleros glam para corazones nostálgicos.»",
+        desc: "Creadores del 'bolero glam', combinando la nostalgia mexicana de mitad de siglo con el sonido acústico actual."
+      }
+    ];
+
+    function renderArtistsGrid(regionFilter = 'all') {
+      const container = document.getElementById('artists-container');
+      container.innerHTML = '';
+
+      const filtered = regionFilter === 'all' 
+        ? allArtists 
+        : allArtists.filter(a => a.region === regionFilter);
+
+      filtered.forEach(artist => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl p-6 border border-black/5 shadow-sm hover:shadow-md transition flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-semibold text-olive uppercase tracking-wider">${artist.country}</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-sand text-wood font-medium">Nuevo Folk</span>
+            </div>
+            <h3 class="font-cinzel text-xl font-bold text-wood mb-2">${artist.name}</h3>
+            <p class="text-xs italic text-terracotta mb-3 font-serif">${artist.quote}</p>
+            <p class="text-xs text-muted leading-relaxed mb-4">${artist.desc}</p>
+          </div>
+          <button onclick="scrollToPlayer()" class="text-xs font-bold text-terracotta hover:underline inline-flex items-center gap-1">
+            <span>Escuchar en la playlist</span> →
+          </button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterArtists(region) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-terracotta', 'text-white', 'border-terracotta');
+        btn.classList.add('bg-white', 'text-wood', 'border-sand-dark/40');
+      });
+
+      event.target.classList.remove('bg-white', 'text-wood', 'border-sand-dark/40');
+      event.target.classList.add('bg-terracotta', 'text-white', 'border-terracotta');
+
+      renderArtistsGrid(region);
+    }
+
+
+    /* ===================================================
+       5. MURO DE REFLEXIONES (LOCAL STORAGE)
+    =================================================== */
+    let communityNotes = [
+      {
+        author: "Camila R.",
+        song: "Te Guardo",
+        content: "Escuchar a Silvana me regresó a las tardes en casa de mi abuela. Su voz tiene el peso del dolor dulce y sanador."
+      },
+      {
+        author: "Mateo G.",
+        song: "Marchita",
+        content: "El cuatro venezolano en esta pieza me demuestra que no se necesitan mil sintetizadores para mover el alma."
+      }
+    ];
+
+    function loadNotes() {
+      const saved = localStorage.getItem('ecos_notes');
+      if (saved) {
+        communityNotes = JSON.parse(saved);
+      }
+      renderNotes();
+    }
+
+    function renderNotes() {
+      const wall = document.getElementById('notes-wall');
+      wall.innerHTML = '';
+
+      communityNotes.slice().reverse().forEach(note => {
+        const card = document.createElement('div');
+        card.className = "bg-white p-5 rounded-2xl border border-black/5 shadow-sm text-left flex flex-col justify-between";
+        card.innerHTML = `
+          <p class="text-xs text-wood/90 leading-relaxed mb-4 italic font-serif">«${note.content}»</p>
+          <div class="pt-3 border-t border-black/5 flex justify-between items-center text-[11px]">
+            <span class="font-bold text-wood">${note.author}</span>
+            <span class="text-terracotta font-medium">${note.song || 'Música de Raíz'}</span>
+          </div>
+        `;
+        wall.appendChild(card);
+      });
+    }
+
+    function addCommunityNote(e) {
+      e.preventDefault();
+      const author = document.getElementById('note-author').value.trim();
+      const song = document.getElementById('note-song').value.trim();
+      const content = document.getElementById('note-content').value.trim();
+
+      if (author && content) {
+        communityNotes.push({ author, song, content });
+        localStorage.setItem('ecos_notes', JSON.stringify(communityNotes));
+        renderNotes();
+
+        document.getElementById('note-form').reset();
+      }
+    }
+
+
+    /* ===================================================
+       INICIALIZACIÓN AL CARGAR LA PÁGINA
+    =================================================== */
+    window.onload = function() {
+      loadTrack(0);
+      renderQuizStep();
+      renderArtistsGrid('all');
+      loadNotes();
+    };
+  </script>
+</body>
+</html>
